@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KopfRechenTrainer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="400">
+        Title="MainWindow" Height="250" Width="300">
     
     <Window.Resources>
         <Style TargetType="Label">
@@ -25,6 +25,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
+        <!-- Shows math task -->
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="Auto">
             <Label x:Name="First_Number_Field">Zahl1</Label>
             <Label x:Name="Operator_Field">Operator</Label>
@@ -33,9 +34,11 @@
             <TextBox x:Name="Result_Box" BorderThickness="1" Width="60" Padding="0, 5" TextAlignment="Center">Ergebnis</TextBox>
         </StackPanel>
 
+        <!-- Right or wrong result labels -->
         <Label x:Name="Is_Right_Label" Content="Richtig!" Visibility="Hidden" FontSize="40" Foreground="Green" Grid.Row="1" VerticalContentAlignment="Center"/>
         <Label x:Name="Is_False_Label" Content="Falsch!" Visibility="Hidden" FontSize="40" Foreground="Red" Grid.Row="1" VerticalContentAlignment="Center"/>
 
+        <!-- Buttons for result check and next math task -->
         <Button x:Name="Check_Button" Content="Prüfen" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="Check_Button_Click"/>
         <Button x:Name="Next_Button" Content="Weiter" Visibility="Hidden" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="Next_Button_Click"/>
     </Grid>

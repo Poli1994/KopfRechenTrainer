@@ -61,7 +61,7 @@ namespace KopfRechenTrainer
 
             number1 = rndNumber1.Next(1, 101);
             number2 = rndNumber2.Next(1, 101);
-            operant = operants[rndOperator.Next(0, 2)];
+            operant = operants[rndOperator.Next(0, 3)];
 
             First_Number_Field.Content = number1;
             Operator_Field.Content = operant;
@@ -74,19 +74,19 @@ namespace KopfRechenTrainer
             switch (operant)
             {
                 case '+':
-                    if (number1 + number2 == Convert.ToInt32(Result_Box.Text))
+                    if (number1 + number2 == Convert.ToDouble(Result_Box.Text))
                         return true;
                     return false;
                 case '-':
-                    if (number1 - number2 == Convert.ToInt32(Result_Box.Text))
+                    if (number1 - number2 == Convert.ToDouble(Result_Box.Text))
                         return true;
                     return false;
                 case '*':
-                    if (number1 * number2 == Convert.ToInt32(Result_Box.Text))
+                    if (number1 * number2 == Convert.ToDouble(Result_Box.Text))
                         return true;
                     return false;
                 case '/':
-                    if (number1 / number2 == Convert.ToInt32(Result_Box.Text))
+                    if (number1 / number2 == Convert.ToDouble(Result_Box.Text))
                         return true;
                     return false;
                 default:
