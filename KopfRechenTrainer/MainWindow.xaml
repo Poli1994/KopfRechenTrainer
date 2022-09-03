@@ -1,0 +1,41 @@
+﻿<Window x:Class="KopfRechenTrainer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KopfRechenTrainer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="400">
+    
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Width" Value="25"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            
+            <!--Setter for Right and False Label-->
+            <Setter x:Uid="Is_Right_Label" Property="Width" Value="Auto"/>
+            <Setter x:Uid="Is_False_Label" Property="Width" Value="Auto"/>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="Auto">
+            <Label x:Name="First_Number_Field">Zahl1</Label>
+            <Label x:Name="Operator_Field">Operator</Label>
+            <Label x:Name="Second_Number_Field">Zahl2</Label>
+            <Label>=</Label>
+            <TextBox x:Name="Result_Box" BorderThickness="1" Width="60" Padding="0, 5" TextAlignment="Center">Ergebnis</TextBox>
+        </StackPanel>
+
+        <Label x:Name="Is_Right_Label" Content="Richtig!" Visibility="Hidden" FontSize="40" Foreground="Green" Grid.Row="1" VerticalContentAlignment="Center"/>
+        <Label x:Name="Is_False_Label" Content="Falsch!" Visibility="Hidden" FontSize="40" Foreground="Red" Grid.Row="1" VerticalContentAlignment="Center"/>
+
+        <Button x:Name="Check_Button" Content="Prüfen" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="Check_Button_Click"/>
+    </Grid>
+</Window>
