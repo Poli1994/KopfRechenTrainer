@@ -34,13 +34,23 @@ namespace KopfRechenTrainer
             Randomize();
         }
 
+        // Button Events
+
         private void Check_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (IsCorrectCheck(operant))
-                Is_Right_Label.Visibility = Visibility.Visible;
-            else
-                Is_False_Label.Visibility = Visibility.Visible;
+            ResultText();
+
+            SwitchButton();
         }
+
+        private void Next_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Randomize();
+
+            SwitchButton();
+        }
+
+        // Methods
 
         // Randomize Numbers and Operator
         private void Randomize()
@@ -82,6 +92,30 @@ namespace KopfRechenTrainer
                 default:
                     return false;
             }
+        }
+
+        private void SwitchButton()
+        {
+            if (Check_Button.Visibility == Visibility.Visible)
+            {
+                Check_Button.Visibility = Visibility.Hidden;
+                Next_Button.Visibility = Visibility.Visible;
+            }
+            else if (Next_Button.Visibility == Visibility.Visible)
+            {
+                Next_Button.Visibility = Visibility.Hidden;
+                Check_Button.Visibility = Visibility.Visible;
+                Is_Right_Label.Visibility = Visibility.Hidden;
+                Is_False_Label.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void ResultText()
+        {
+            if (IsCorrectCheck(operant))
+                Is_Right_Label.Visibility = Visibility.Visible;
+            else
+                Is_False_Label.Visibility = Visibility.Visible;
         }
     }
 }

@@ -37,5 +37,6 @@
         <Label x:Name="Is_False_Label" Content="Falsch!" Visibility="Hidden" FontSize="40" Foreground="Red" Grid.Row="1" VerticalContentAlignment="Center"/>
 
         <Button x:Name="Check_Button" Content="Prüfen" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="Check_Button_Click"/>
+        <Button x:Name="Next_Button" Content="Weiter" Visibility="Hidden" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="Next_Button_Click"/>
     </Grid>
 </Window>
